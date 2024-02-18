@@ -95,7 +95,7 @@ app.put('/change-password', async (request, response) => {
       databaseUser.password,
     )
     if (isPasswordMatched === true) {
-      if (validatePassword(newPassword)) {
+      if (validatePassword(newPassword)) { 
         const hashedPassword = await bcrypt.hash(newPassword, 10)
         const updatePasswordQuery = `
         UPDATE user SET password='${hashedPassword}'
